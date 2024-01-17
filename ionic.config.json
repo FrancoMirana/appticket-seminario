@@ -1,0 +1,7 @@
+{
+  "name": "appticket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
