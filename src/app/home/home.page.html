@@ -1,20 +1,42 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
+
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <swiper-container [loop]="true" [pagination]="true" [slidesPerView]="1">
+
+
+    <swiper-slide id="slide_inicio">
+      <section>
+        <div class="div_titulo">
+          <h1 class="titulo_inicio">BIENVENIDOS</h1>
+        </div>
+      </section>
+      <section class="logo">
+        <img class="imagen_logo" src="assets\img\app_logo.svg" />
+      </section>
+      <section class="position">
+        <img class="hincha" src="assets\img\hincha3.png" />
+        <img class="hincha" src="assets\img\hincha2.png" />
+        <img class="hincha" src="assets\img\hincha1.png" />
+      </section>
+
+
+    </swiper-slide>
+    <swiper-slide class="slides">Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+  </swiper-container>
+
+
 </ion-content>
