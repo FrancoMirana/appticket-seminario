@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -65,3 +66,16 @@ swiper-container {
   width: 100%;
 
 }
+
+//Aqui va el css para el resto de slides
+#slides {
+  background: white;
+ display: grid;
+  grid-template-rows: 200px;
+}
+.p2, .p1{
+  color:rgb(43, 43, 43);
+  text-align: center;
+  padding:0px 80px 0px 80px;
+}
+

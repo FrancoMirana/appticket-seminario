@@ -8,34 +8,31 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-
   </ion-header>
-
   <swiper-container [loop]="true" [pagination]="true" [slidesPerView]="1">
-
-
-    <swiper-slide id="slide_inicio">
+    <swiper-slide *ngFor="let slides of slides" id={{slides.id_slide_css}}>
+     
       <section>
-        <div class="div_titulo">
-          <h1 class="titulo_inicio">BIENVENIDOS</h1>
+        
+        <div class={{slides.div_titulo_css}}>
+          <h1 class={{slides.titulo_css}}>{{slides.titulo_1}}</h1>
+        <br>
+        <p class={{slides.p1_css}}>{{slides.parrafo_1}}</p>
         </div>
       </section>
-      <section class="logo">
-        <img class="imagen_logo" src="assets\img\app_logo.svg" />
+      <section class={{slides.section_img_css}}>
+        <img class={{slides.class_img_logo_css}} src={{slides.img_logo}} />
+        <br>
+        <h1></h1>
+        <br>
+        <p class={{slides.p2_css}}>{{slides.parrafo_2}}</p>
       </section>
-      <section class="position">
-        <img class="hincha" src="assets\img\hincha3.png" />
-        <img class="hincha" src="assets\img\hincha2.png" />
-        <img class="hincha" src="assets\img\hincha1.png" />
+      <section class={{slides.section_imagenes_css}}>
+        <img class={{slides.class_imagenes}} src={{slides.imagen_3}} />
+        <img class={{slides.class_imagenes}} src={{slides.imagen_2}} />
+        <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
       </section>
-
-
     </swiper-slide>
-    <swiper-slide class="slides">Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
   </swiper-container>
 
 
