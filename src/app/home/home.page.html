@@ -34,9 +34,9 @@
       <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
     </section>
     </swiper-slide>-->
-    <swiper-slide id="slides2" *ngFor="let slides of slides">
+    <swiper-slide  *ngFor="let slides of slides" id={{slides.id_slide_css}}>
      
-      <div class="fondo">
+      <div class={{slides.mosaico}}>
         <section>
           <div class={{slides.div_titulo_css}}>
             <h1 class={{slides.titulo_css}}>{{slides.titulo_1}}</h1>
@@ -51,7 +51,11 @@
           <br>
           <p class={{slides.p2_css}}>{{slides.parrafo_2}}</p>
         </section>
-        
+        <section class={{slides.section_imagenes_css}}>
+          <img class={{slides.class_imagenes}} src={{slides.imagen_3}} />
+          <img class={{slides.class_imagenes}} src={{slides.imagen_2}} />
+          <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
+        </section>
      
       </div>
    
