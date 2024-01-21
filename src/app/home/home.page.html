@@ -10,10 +10,10 @@
   <ion-header collapse="condense">
   </ion-header>
   <swiper-container [loop]="true" [pagination]="true" [slidesPerView]="1">
-    <swiper-slide *ngFor="let slides of slides" id={{slides.id_slide_css}}>
-     
+  <!--  <swiper-slide *ngFor="let slides of slides" id={{slides.id_slide_css}} >
+    
+      <div class="fondo">
       <section>
-        
         <div class={{slides.div_titulo_css}}>
           <h1 class={{slides.titulo_css}}>{{slides.titulo_1}}</h1>
         <br>
@@ -23,15 +23,38 @@
       <section class={{slides.section_img_css}}>
         <img class={{slides.class_img_logo_css}} src={{slides.img_logo}} />
         <br>
-        <h1></h1>
+        <h1 >{{slides.titulo_2}}</h1>
         <br>
         <p class={{slides.p2_css}}>{{slides.parrafo_2}}</p>
       </section>
-      <section class={{slides.section_imagenes_css}}>
-        <img class={{slides.class_imagenes}} src={{slides.imagen_3}} />
-        <img class={{slides.class_imagenes}} src={{slides.imagen_2}} />
-        <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
-      </section>
+    </div>
+    <section class={{slides.section_imagenes_css}}>
+      <img class={{slides.class_imagenes}} src={{slides.imagen_3}} />
+      <img class={{slides.class_imagenes}} src={{slides.imagen_2}} />
+      <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
+    </section>
+    </swiper-slide>-->
+    <swiper-slide id="slides2" *ngFor="let slides of slides">
+     
+      <div class="fondo">
+        <section>
+          <div class={{slides.div_titulo_css}}>
+            <h1 class={{slides.titulo_css}}>{{slides.titulo_1}}</h1>
+          <br>
+          <p class={{slides.p1_css}}>{{slides.parrafo_1}}</p>
+          </div>
+        </section>
+        <section class={{slides.section_img_css}}>
+          <img class={{slides.class_img_logo_css}} src={{slides.img_logo}} />
+          <br>
+          <h1 >{{slides.titulo_2}}</h1>
+          <br>
+          <p class={{slides.p2_css}}>{{slides.parrafo_2}}</p>
+        </section>
+        
+     
+      </div>
+   
     </swiper-slide>
   </swiper-container>
 
