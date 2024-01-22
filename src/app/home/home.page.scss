@@ -79,7 +79,7 @@ swiper-container {
 #slides2 {
 
   
-  position: absolute;
+  
 }
 
 .fondo {
@@ -112,9 +112,11 @@ swiper-container {
 
 .p2,
 .p1 {
+  font-size: 25px;
   color: rgb(43, 43, 43);
   text-align: center;
   padding: 0px 80px 0px 80px;
+  z-index: 2;
 }
 
 .titulo_inicio-b {
@@ -129,9 +131,12 @@ swiper-container {
 
 .div_titulo-b {
   width: 100%;
+  z-index: 2;
 }
 
-.logo-b {}
+.logo-b {
+  z-index: 2;
+}
 
 .position-b {
   /*position: relative;
@@ -144,4 +149,25 @@ swiper-container {
   bottom: 0;
   width: 100%;
 */
+}
+
+//salides 3
+
+.fondo2{
+  background-image: url("/assets/img/espectaculo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.p1s3{
+  font-size: 100px;
+  margin-bottom: 0px;
+}
+.p2s3{
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 0;
+  
 }
