@@ -1,0 +1,45 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<ion-header [translucent]="true">
+
+
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <swiper-container [loop]="true" [pagination]="true" [slidesPerView]="1">
+ 
+    <swiper-slide  *ngFor="let slides of slides" id={{slides.id_slide_css}}>
+     
+      <div class={{slides.mosaico}}>
+        <section>
+          <div class={{slides.div_titulo_css}}>
+            <h1 class={{slides.titulo_css}}>{{slides.titulo_1}}</h1>
+          <br>
+          <p class={{slides.p1_css}}>{{slides.parrafo_1}}</p>
+          </div>
+        </section>
+        <section class={{slides.section_img_css}}>
+          <img class={{slides.class_img_logo_css}} src={{slides.img_logo}} />
+          <br>
+          <h1 >{{slides.titulo_2}}</h1>
+          <br>
+          <p class={{slides.p2_css}}>{{slides.parrafo_2}}</p>
+        </section>
+        <section class={{slides.section_imagenes_css}}>
+          <img class={{slides.class_imagenes}} src={{slides.imagen_3}} />
+          <img class={{slides.class_imagenes}} src={{slides.imagen_2}} />
+          <img class={{slides.class_imagenes}} src={{slides.imagen_1}} />
+        </section>
+     
+      </div>
+   
+    </swiper-slide>
+  </swiper-container>
+
+
+</ion-content>
+
+
+
