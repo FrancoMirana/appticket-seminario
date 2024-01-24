@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage {
   slides=[
     {
        mosaico:"",
@@ -74,7 +74,12 @@ export class IntroPage implements OnInit {
    ]
   constructor() { }
 
-  ngOnInit() {
+  
+
+  ionViewDidEnter(){
+    console.log("ya vi la intro");
+    ///codigo set mostrar intro
+    
   }
 
 }
