@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
@@ -72,13 +72,16 @@ export class IntroPage {
      
  
    ]
-  constructor() { }
+  constructor(
+    private storage: Storage
+  ) { }
 
   
 
   ionViewDidEnter(){
     console.log("ya vi la intro");
     ///codigo set mostrar intro
+    this.storage.set('mostreIntro',true);
     
   }
 

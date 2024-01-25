@@ -17,7 +17,7 @@ export class HomePage {
 goToIntro(){
   console.log("go to intro");
   this.router.navigateByUrl('/intro');
-  this.strorage.set('mostreIntro',true);
+  this.strorage.set('mostreIntro',false);
 
   
 }
