@@ -1,0 +1,91 @@
+
+
+
+.fondo {//fonfr en forma de mosaico
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .fondo::before {
+  
+    content: '';
+  
+    background-image: url('/assets/img/iconos_svg/ticket2.svg');
+    background-repeat: repeat;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.1;
+    z-index: 1;
+  
+  }
+///contenedor de  iputs de formulario
+  .contenedor-campos{
+   
+    z-index: 2;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .campos{//modificador de stilos de inputs
+    width: 100%;
+    padding: 30px;
+  }
+  ion-item {//transparencia en inputs
+    z-index: 2;
+    opacity: 0.5;
+    border-radius: 20px;
+    width: 100%;
+  }
+ .button{//estilos para diseño de div de boton login
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+ }
+
+ ////configuracion de imaen avatar
+  .centrar-avatar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .avatar{
+    width: 150px;
+    height: 150px;
+    z-index: 3;
+  }
+
+  /////configuracion estilos de alerta email
+  
+  .alert_error{
+
+    background: #f2dede;
+    border: 1px solid #a94442;
+    color: #a94442;
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+
+}
+.alert.success{
+    background: #4caf50;
+
+}

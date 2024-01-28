@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center ion-text-capitalize">login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <div class="fondo">
+    <section>
+
+      <figure class="ion-text-center centrar-avatar">
+     <ion-avatar class="avatar">
+      <img src="../../assets/img/iconos_svg/user-avatar.svg" alt="avatar">
+     </ion-avatar>
+    </figure>
+
+    </section>
+  <section>
+
+
+    <form class="login" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+     <div class="contenedor-campos">
+      <div class="campos">
+        <ion-item>
+          <ion-input email label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+      </div>
+      
+      <div>
+        <ng-container *ngFor=" let validation of validation_messages.email">
+         <div  *ngIf="
+         (loginForm.get('email')?.hasError(validation.type)&&
+          loginForm.get('email')?.dirty)">
+         <div class="alert_error">
+          {{validation.message}}
+         </div> 
+        </div> 
+        </ng-container>
+      </div>
+      <br>
+      <div class="campos">
+        <ion-item>
+          <ion-input
+            formControlName="password"
+            label="Conraseña"
+            labelPlacement="stacked"
+            type="password"
+            placeholder="Ingresa tu contraseña">
+          </ion-input>
+        </ion-item>
+
+      </div>
+      <div class="button">
+        <ion-button type="submit" [disabled]="!loginForm.valid"color="danger" >Login</ion-button>
+      </div>
+       
+      
+    
+    </div>
+   
+    </form>
+  </section>
+</div>
+</ion-content>
