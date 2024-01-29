@@ -41,13 +41,27 @@
       <div class="campos">
         <ion-item>
           <ion-input
+          
+            
             formControlName="password"
             label="Conraseña"
-            labelPlacement="stacked"
+            labelPlacement="floating"
             type="password"
             placeholder="Ingresa tu contraseña">
+            
           </ion-input>
         </ion-item>
+        <br>
+        <div>
+          <ng-container *ngFor=" let validation of validation_messages.password">
+            <div  *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.touched || loginForm.get('dirty')">
+          
+          <div class="alert_error">
+             {{validation.message}}
+            </div> 
+           </div> 
+           </ng-container>
+        </div>
 
       </div>
       <div class="button">

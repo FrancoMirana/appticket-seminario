@@ -15,6 +15,11 @@ export class LoginPage implements OnInit {
       {type:"required",message:"El Email es obligatorio"},
       {type:"email",message:"El Email ingreesado no es valido"}
     ],
+    password:[
+      {type:"required",message:"La contraseña es obligatoria"},
+      {type:"maxLength",message:"La clave ecxede el maximo de caracteres"},
+      {type:"minLength",message:"La clave no contiene el minimo de caracteres"}
+    ],
     //validaciones para
   }
 
@@ -38,6 +43,14 @@ export class LoginPage implements OnInit {
         ),
       password: new FormControl(
         "",
+         [
+          Validators.required,
+          Validators.maxLength(10),
+          Validators.minLength(8)
+         ]
+        
+        
+        
         
 
       )
@@ -49,6 +62,9 @@ export class LoginPage implements OnInit {
   }
   login(login_date: any){
     console.log(login_date) 
+    console.log(this.loginForm.get('password'));
+    
+    
     this.authService.loginUser(login_date).then(res=>{
       console.log(res);
       
