@@ -1,7 +1,33 @@
-home
-<br>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<swiper-container 
+[pagination]="true" [slidesPerView]="2">
+
+    <swiper-slide *ngFor="let slide of event_List">
+        <div>
+            <img src={{slide.image}} alt="">
+            <p>{{slide.name}}</p>
+        </div>
+          
+    </swiper-slide>
+    
+</swiper-container>
 
 
 
-<br>
-<ion-button (click)="goToIntro()">Ver Intro</ion-button>
+
+
+
+
+   
+    <!--<ion-button (click)="goToIntro()">Ver Intro</ion-button>-->
+
+  </ion-content>
