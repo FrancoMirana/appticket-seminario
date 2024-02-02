@@ -90,3 +90,15 @@
     background: #4caf50;
 
 }
+
+.enlace{
+  border-radius: 0;
+  color:royalblue;
+  opacity: 100%;
+  z-index: 3;
+  --background:none;
+  --border-style:none;
+  text-align: center;
+  cursor: pointer;
+
+}

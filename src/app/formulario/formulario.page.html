@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+</ion-header>
+<ion-content >
+  <div class="centrar">
+    <h2>Formulario de registro</h2>
+  </div>
+ 
+
+  <div class="contenedor-form">
+
+    <form class="formulario" [formGroup]="formulario" (ngSubmit)="formRegis(formulario.value)">
+      <label for="">Nombre</label>
+      <ion-item>
+        <ion-input 
+        formControlName="nombre"
+        aria-label="Custom input"
+        placeholder="Ingresa tu nombre"
+        class="custom">
+      </ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor=" let validation of validation_messages.nombre">
+          <div  *ngIf="
+          (formulario.get('nombre')?.hasError(validation.type)&&
+           formulario.get('nombre')?.dirty)">
+          <p class="alert">
+           {{validation.message}}
+          </p> 
+        </div>
+        </ng-container>
+      
+    </div>
+     
+      <label for="">Apellido</label>
+      <ion-item>
+        <ion-input
+        formControlName="apellido"
+        aria-label="Custom input"
+        placeholder="Ingresa tu apellido"
+        class="custom">
+      </ion-input>
+      </ion-item>
+      <div><ng-container *ngFor=" let validation of validation_messages.apellido">
+          <div  *ngIf="(formulario.get('apellido')?.hasError(validation.type)&& formulario.get('apellido')?.dirty)">
+          <p class="alert"> {{validation.message}} </p> 
+        </div> </ng-container></div>
+      <label for="">correo</label>
+      <ion-item>
+        <ion-input
+        formControlName="email"
+        email
+        aria-label="Custom input"
+        placeholder="Ingresa tu correo"
+        class="custom">
+      </ion-input>
+      </ion-item>
+      <div><ng-container *ngFor=" let validation of validation_messages.email">
+        <div  *ngIf="(formulario.get('email')?.hasError(validation.type)&& formulario.get('email')?.dirty)">
+        <p class="alert"> {{validation.message}} </p> 
+      </div> </ng-container></div>
+      <label for="">Contraseña</label>
+      <ion-item>
+        <ion-input
+        formControlName="password"
+        placeholder="Ingresa tu contraseña"
+        helperText="Cantidad de caracteres"
+        [counter]="true"
+        [maxlength]="10"
+      ></ion-input>
+      </ion-item>
+      <div><ng-container *ngFor=" let validation of validation_messages.password">
+        <div  *ngIf="(formulario.get('password')?.hasError(validation.type)&& formulario.get('password')?.dirty)">
+        <p class="alert"> {{validation.message}} </p> 
+      </div> </ng-container></div>
+
+
+      <div class="button">
+        <ion-button type="submit" [disabled]="!formulario.valid" color="danger" >Registrar</ion-button>
+      </div>
+
+    </form>
+ 
+  
+ 
+
+  </div>
+
+
+
+</ion-content>

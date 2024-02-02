@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
 import{AuthService} from'../services/auth.service';
 import { NavController} from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,8 @@ export class LoginPage implements OnInit {
     ],
     password:[
       {type:"required",message:"La contraseña es obligatoria"},
-      {type:"maxLength",message:"La clave ecxede el maximo de caracteres"},
-      {type:"minLength",message:"La clave no contiene el minimo de caracteres"}
+      {type:"maxlength",message:"La clave ecxede el maximo de caracteres "},
+      {type:"minlength",message:"La clave no contiene el minimo de caracteres "}
     ],
     //validaciones para
   }
@@ -27,7 +28,8 @@ export class LoginPage implements OnInit {
   constructor(
      private formBuilder:FormBuilder,
      private authService:AuthService,
-     private navCtrl: NavController
+     private navCtrl: NavController,
+     private storage: Storage
 
      ) 
     { 
@@ -43,16 +45,12 @@ export class LoginPage implements OnInit {
         ),
       password: new FormControl(
         "",
-         [
+         Validators.compose([
           Validators.required,
           Validators.maxLength(10),
           Validators.minLength(8)
-         ]
+         ])
         
-        
-        
-        
-
       )
       })
 
@@ -61,17 +59,17 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   login(login_date: any){
-    console.log(login_date) 
-    console.log(this.loginForm.get('password'));
-    
-    
     this.authService.loginUser(login_date).then(res=>{
-      console.log(res);
-      
       this.loginMessage = res;
+      this.storage.set('userLoginIn',true)
       this.navCtrl.navigateForward('/home')
     }).catch(err=>{
       this.loginMessage=err;
     });
+  }
+
+  goToForm(){
+    this.navCtrl.navigateForward('/formulario');
+
   }
 }

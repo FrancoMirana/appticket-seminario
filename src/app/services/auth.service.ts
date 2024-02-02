@@ -19,7 +19,7 @@ export class AuthService {
           acept('inicio correcto');
           
         }else{
-            console.log("los datos son incorectos");
+           
             
           reject("los datos son incorectos");
           

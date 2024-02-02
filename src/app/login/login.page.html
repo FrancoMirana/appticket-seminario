@@ -54,7 +54,7 @@
         <br>
         <div>
           <ng-container *ngFor=" let validation of validation_messages.password">
-            <div  *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.touched || loginForm.get('dirty')">
+            <div  *ngIf="(loginForm.get('password')?.hasError(validation.type) &&  loginForm.get('password')?.dirty)">
           
           <div class="alert_error">
              {{validation.message}}
@@ -67,12 +67,17 @@
       <div class="button">
         <ion-button type="submit" [disabled]="!loginForm.valid"color="danger" >Login</ion-button>
       </div>
-       
-      
-    
     </div>
    
     </form>
+    <br>
+    <br>
+    <ion-item class="enlace" (click)="goToForm()">
+      <ion-label>
+        Aun no tienes cuenta?.Registrate aqui!
+      </ion-label>
+    </ion-item>
+ 
   </section>
 </div>
 </ion-content>
