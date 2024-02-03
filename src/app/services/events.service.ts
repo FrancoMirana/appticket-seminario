@@ -16,6 +16,13 @@ export class EventsService {
 
   }
 
+  getCategories(){
+    return fetch(`${this.urlServer}/categories`).then(
+      response=>response.json()
+    );
+
+  }
+
   getLocalEvents(){
     return dataEvents;
   }

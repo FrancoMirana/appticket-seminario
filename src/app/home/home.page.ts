@@ -10,6 +10,7 @@ import { EventsService } from '../services/events.service';
 })
 export class HomePage {
 event_List:any;
+categories:any;
   constructor(
     private router:Router,
     private strorage: Storage,
@@ -24,7 +25,13 @@ ionViewDidEnter(){
     this.event_List=res;
    })
   console.log(this.events.getLocalEvents().events);
-  
+
+  this.events.getCategories().then(res=>{
+
+    this.categories=res;
+    console.log(res);
+    
+  })
  
 }
 
