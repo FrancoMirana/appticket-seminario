@@ -14,7 +14,7 @@
 
 <ion-content class="fondo">
     <section class="cat">
-        <div class="cat-contenedor"><p>{{categoriesHome}}</p></div>
+        <div class="cat-contenedor"><p>{{nameCategorie}}</p></div>
 
     </section>
 
@@ -22,7 +22,7 @@
     <swiper-container
 [pagination]="true" [slidesPerView]="2">
 
-    <swiper-slide *ngFor="let slide of event_List_Server">
+    <swiper-slide *ngFor="let slide of event_List_locales">
         <div class="slides1">
             <img class="img-slide" src={{slide.image}} alt="">
         </div>
@@ -35,8 +35,8 @@
 
 <section class="cont-eventos">
     <!--aqui van las tarjetas de eventos-->
-    <ng-container *ngFor="let card of event_List_Server" >
-        <div >
+    <ng-container *ngFor="let card of event_List_locales" >
+        <div *ngIf="(card.category_id==3)">
         <ion-card>
             <img alt="Silhouette of mountains" src="{{card.image}}" />
             <ion-card-header>

@@ -1,20 +1,21 @@
+
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { Storage } from '@ionic/storage-angular';
 import { EventsService } from '../services/events.service';
 import { NavController} from '@ionic/angular';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-cociertos',
+  templateUrl: './cociertos.page.html',
+  styleUrls: ['./cociertos.page.scss'],
 })
-export class HomePage {
-idCat:any;
+export class CociertosPage  {
+nameCategorie:any
+  idCat:any;
 event_List_Server:any;
 event_List_locales:any;
-categoriesHome:any;
+
 
   constructor(
     private router:Router,
@@ -25,15 +26,8 @@ categoriesHome:any;
 
 
 ionViewDidEnter(){
-   this.events.getEvents().then(res=>{
-    
-    
-    this.event_List_Server=res;
-    console.log(res);
-    
-    this.idCat=this.strorage.get('id_cat');
-    this.categoriesHome.storage.get('categorias')
-   })
+   this.event_List_locales = this.events.getLocalEvents().events;
+   console.log(this.event_List_locales);
    this.strorage.get('id_cat').then((res)=>{
     this.idCat=res;
     
@@ -42,27 +36,15 @@ ionViewDidEnter(){
     
    });;
    this.strorage.get('categorias').then((res)=>{
-    this.categoriesHome=res;
+    this.nameCategorie=res;
     
    }).catch((err)=>{
     console.log(err);
     
    });
- 
+   
+   
+   
 }
-
-
-
-goToIntro(){
-  console.log("go to intro");
-  this.router.navigateByUrl('/intro');
-  this.strorage.set('mostreIntro',false);
-
-  
-}
-
-
-
-
 
 }

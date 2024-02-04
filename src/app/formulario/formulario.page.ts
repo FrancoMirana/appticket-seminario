@@ -92,5 +92,9 @@ formMessage:any;
       this.validation_messages=err;
     })
   }
+  goToLogin(){
+    this.navCtrl.navigateBack('/login')
+    
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as dataEvents from "./events.json"
+import * as categories from "./categories.json"
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class EventsService {
 
   getLocalEvents(){
     return dataEvents;
+  }
+
+  getCategoriesLocals(){
+    return categories;
   }
 }

@@ -57,8 +57,23 @@ ion-content {
 .centrar{
    margin: 0 auto;
    text-align: center;
+   display: flex;
+   
+  
+  
+}
+.centrar h2{
+   font-size: 30px;
+
 }
 
+.volver{
+   font-size: 30px;
+}
+.volver{
+   padding-left:  10px;
+  width: 100%;
+}
 ///////////////////////
 
 

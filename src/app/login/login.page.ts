@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
     this.authService.loginUser(login_date).then(res=>{
       this.loginMessage = res;
       this.storage.set('userLoginIn',true)
-      this.navCtrl.navigateForward('/home')
+      this.navCtrl.navigateForward('menu/home')
     }).catch(err=>{
       this.loginMessage=err;
     });
